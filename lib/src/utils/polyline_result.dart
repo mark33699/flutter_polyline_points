@@ -1,3 +1,5 @@
+import 'package:flutter_polyline_points/src/BoundsLatLng.dart';
+
 import '../../flutter_polyline_points.dart';
 
 /// description:
@@ -15,10 +17,17 @@ class PolylineResult {
   /// list of decoded points
   List<PointLatLng> points;
 
+  BoundsLatLng? bounds;
+
   /// the error message returned from google, if none, the result will be empty
   String? errorMessage;
 
-  PolylineResult({this.status, this.points = const [], this.errorMessage = ""});
+  PolylineResult({
+    this.status,
+    this.points = const [],
+    this.bounds,
+    this.errorMessage = ""
+  });
 
 
 }

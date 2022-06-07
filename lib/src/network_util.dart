@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_polyline_points/src/BoundsLatLng.dart';
 import 'package:http/http.dart' as http;
 
 import '../src/PointLatLng.dart';
@@ -55,6 +56,7 @@ class NetworkUtil {
           parsedJson["routes"].isNotEmpty) {
         result.points = decodeEncodedPolyline(
             parsedJson["routes"][0]["overview_polyline"]["points"]);
+        result.bounds = BoundsLatLng.fromJson(parsedJson["routes"][0]["bounds"]);
       } else {
         result.errorMessage = parsedJson["error_message"];
       }

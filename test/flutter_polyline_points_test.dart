@@ -1,4 +1,3 @@
-import 'package:flutter_polyline_points/src/constants.dart';
 import 'package:flutter_polyline_points/src/utils/polyline_result.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -8,7 +7,7 @@ void main() {
   test('get list of coordinates from two geographical positions', () async {
     final polylinePoints = PolylinePoints();
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
-        Constants.API_KEY, PointLatLng(6.5212402, 3.3679965),
+        'GOOGLE_API_KEY', PointLatLng(6.5212402, 3.3679965),
         PointLatLng(6.595680, 3.337030),
         travelMode: TravelMode.driving);
     assert(result.points.isNotEmpty == true);
